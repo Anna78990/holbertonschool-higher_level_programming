@@ -7,5 +7,5 @@ for i in range(0, 10):
             print('{:d}'.format(i), end="")
             print('{:d}'.format(n), end="")
         else:
-           continue
+            continue
 print('')
