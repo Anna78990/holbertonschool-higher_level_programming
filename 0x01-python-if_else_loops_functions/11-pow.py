@@ -5,8 +5,6 @@ def pow(a, b):
     elif b > 0:
         ap = a
         for i in range(1, b):
-            if ap < 0:
-                ap = abs(ap)
             ap *= a
         return ap
     else:
