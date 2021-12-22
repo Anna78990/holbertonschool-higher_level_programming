@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def uppercase(str):
-    i = 0
     for element in str:
         if ord(element) >= 97 and ord(element) <= 122:
-            element = element.upper()
+            oe = ord(element) - 32
+            element = chr(oe)
         print("{}".format(element), end="")
     print("")
