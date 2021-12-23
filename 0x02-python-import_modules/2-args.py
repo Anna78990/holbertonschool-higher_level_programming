@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 import sys
 
-argvs = sys.argv
-argc = len(argvs)
+argv = sys.argv
+argc = len(argv)
 
 if (argc > 1):
     for i in range(1, argc):
-        print("{}: {}".format(i, argvs[i]))
+        print("{}: {}".format(i, argv[i]))
 else:
     print("0 arguments.")
