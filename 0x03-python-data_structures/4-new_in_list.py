@@ -7,7 +7,7 @@ def new_in_list(my_list, idx, element):
     new_list = list(range(le))
     for i in range(0, le):
         new_list[i] = my_list[i]
-    if le < idx or idx < 0:
+    if le <= idx or idx < 0:
         return my_list
     else:
         new_list[idx] = element
