@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    rp = list(my_string)
-    le = len(rp) - 1
-    for i in rp:
-        if i == 'c' or 'C':
-            del rp[i]
-            del i
-    Rp = "".join(rp)
-    return Rp
+    if my_string:
+        stri = list(my_string)
+    else:
+        return None
+    for i, x in enumerate(stri):
+        if x == 'c' or x == 'C':
+            del stri[i]
+    st = "".join(stri)
+    return st
