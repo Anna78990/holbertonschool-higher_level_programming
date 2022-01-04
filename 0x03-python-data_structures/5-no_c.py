@@ -6,6 +6,6 @@ def no_c(my_string):
         return None
     for i, x in enumerate(stri):
         if x == 'c' or x == 'C':
-            del stri[i]
+            stri.remove(x)
     st = "".join(stri)
     return st
