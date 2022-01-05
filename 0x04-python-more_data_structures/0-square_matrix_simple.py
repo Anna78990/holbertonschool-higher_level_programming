@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new = []
-    for i in range(0, len(matrix)):
-        new.append([])
-        if new[i]:
-            for j in range(0, len(matrix)):
-                a = matrix[i][j]
-                new[i].append(a * a)
+    if matrix:
+        new = []
+        if matrix[0][0]:
+            for i in range(0, len(matrix)):
+                new.append([])
+                for j in range(0, len(matrix)):
+                    a = matrix[i][j]
+                    new[i].append(a * a)
+            return new
         else:
-            continue
-    return new
+            return matrix
+    else:
+        return matrix
