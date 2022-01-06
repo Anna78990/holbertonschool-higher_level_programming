@@ -9,4 +9,5 @@ def best_score(a_dictionary):
         for k, v in a_dictionary.items():
             if v == mx:
                 cle = k
-    return cle
+                return cle
+        return None
