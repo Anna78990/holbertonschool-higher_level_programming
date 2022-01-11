@@ -9,19 +9,18 @@ listint_t *tmp;
 listint_t *current;
 
 current = *head;
-tmp = current->next;
+tmp = *head;
+tmp = tmp->next;
 new = malloc(sizeof(listint_t));
-new->n = number;
 if (new == NULL)
 	return (NULL);
-while (number > current->n)
+new->n = number;
+while (number > tmp->n)
 {
-	if(tmp->n > number)
-		continue;
 	current = current->next;
 	tmp = tmp->next;
 }
 current->next = new;
-new->next = tmp->next;
+new->next = tmp;
 return (new);
 }
