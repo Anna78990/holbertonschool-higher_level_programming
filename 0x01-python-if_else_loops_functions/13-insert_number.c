@@ -22,18 +22,18 @@ new = malloc(sizeof(listint_t));
 if (new == NULL)
 	return (NULL);
 new->n = number;
-if (head)
+if (tmp)
 {
-	if (number < tmp->n)
+	tmp = tmp->next;
+	if (number < current->n)
 	{
-		new->next = tmp;
+		new->next = current;
 		*head = new;
 		return (new);
 	}
-	tmp = tmp->next;
-	while (number > tmp->n)
+	while (number > current->n)
 	{
-		if(tmp == NULL)
+		if(tmp->n > number)
 			break;
 		current = current->next;
 		tmp = tmp->next;
