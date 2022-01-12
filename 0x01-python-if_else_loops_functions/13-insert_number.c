@@ -5,7 +5,7 @@
 /**
  * insert_node - insert int node at the correct position
  * @head: linked list
- * @numner: number of the node
+ * @number: number of the node
  * Return: the address of the new node, or NULL if it failed
  */
 
@@ -33,7 +33,7 @@ if (tmp)
 	}
 	while (number > current->n)
 	{
-		if(tmp->n > number)
+		if (tmp == NULL || tmp->n > number)
 			break;
 		current = current->next;
 		tmp = tmp->next;
