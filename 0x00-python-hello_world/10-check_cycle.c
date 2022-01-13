@@ -10,14 +10,16 @@ int check_cycle(listint_t *list)
 {
 listint_t *comp;
 
-while (list)
+comp = list;
+while (list->next)
 {
-	comp = list;
 	while (comp->next)
 	{
-		comp = comp->next;
-		if (list->next == comp->next)
+		if (comp == list)
+			comp = comp->next;
+		if (list == comp->next)
 			return (1);
+		comp = comp->next;
 	}
 	list = list->next;
 }
