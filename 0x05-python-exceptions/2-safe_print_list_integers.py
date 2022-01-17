@@ -7,7 +7,7 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             s += my_list[i]
             counter += 1
-            print("{}".format(my_list[i]), end="")
+            print("{:d}".format(my_list[i]), end="")
         except TypeError:
             i += 1
     print()
