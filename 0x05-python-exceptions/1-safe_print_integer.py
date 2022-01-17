@@ -8,5 +8,4 @@ def safe_print_integer(value):
     except TypeError:
         return False
     except ValueError:
-        print("{:f}".format(value))
-        return True
+        return False
