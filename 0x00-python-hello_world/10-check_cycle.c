@@ -8,20 +8,22 @@
 
 int check_cycle(listint_t *list)
 {
-listint_t *comp;
+listint_t *comp, *scd;
 
-comp = list;
-while (list->next)
+if (list)
 {
+	comp = list;
 	while (comp->next)
 	{
-		if (comp == list)
-			comp = comp->next;
-		if (list == comp->next)
-			return (1);
+		scd = comp;
+		while (scd)
+		{
+			scd = scd->next;
+			if (scd == comp)
+				return (1);
+		}
 		comp = comp->next;
 	}
-	list = list->next;
 }
 return (0);
 }
