@@ -1,14 +1,9 @@
 #!/usr/bin/python3
 class Square:
-    """square"""
+    """A class used to represent a Square"""
+
     def __init__(self):
         """
         initialize square attributes
-
-        Args:
-        Nothing
-
-	Return:
-        None
         """
         return None
