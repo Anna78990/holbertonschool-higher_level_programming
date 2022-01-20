@@ -11,6 +11,10 @@ class Square:
 
         """
         initialize square attributes
+        
+        Attributes:
+            size(int):size of square
+
         """
 
         self.__size = size
