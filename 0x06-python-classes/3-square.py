@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-class Square:
+"""This module contains a class representing a Square"""
 
+
+class Square:
+    """A class used to represent a Square with the attribute size
+
+        Attributes:
+            size (int):size of square
+    """
     def __init__(self, size=0):
         if type(size) is not int:
             raise TypeError('size must be an integer')
