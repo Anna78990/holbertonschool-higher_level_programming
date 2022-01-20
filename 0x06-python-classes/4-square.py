@@ -27,9 +27,10 @@ class Square:
         self.__size = value
 
     def area(self):
-        if type(self.__size) is not int:
+        ss = self.__size
+        if type(self.__size) is not int and ss.isdigit is False:
             raise TypeError('size must be an integer')
-        elif self.__size < 0:
+        elif int(self.__size) < 0:
             raise ValueError('size must be >= 0')
         else:
-            return self.__size * self.__size
+            return int(self.__size) * int(self.__size)
