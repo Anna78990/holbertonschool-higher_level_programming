@@ -58,14 +58,15 @@ class Square:
         elif self.__size < 0:
             raise ValueError('size must be >= 0')
         else:
-            if self.__position[1] > 0:
-                print("")
             if self.__size == 0:
                 print("")
             else:
-                for i in range(0, self.__size):
-                    for e in range(0, self.__position[0]):
-                        print(" ", end="")
-                    for z in range(0, self.__size):
-                        print("#", end="")
+                if self.__position[1] > 0:
+                    print("")
+                else:
+                    for i in range(0, self.__size):
+                        for e in range(0, self.__position[0]):
+                            print(" ", end="")
+                        for z in range(0, self.__size):
+                            print("#", end="")
                     print("")
