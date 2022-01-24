@@ -48,3 +48,35 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         else:
             self.__height = value
+
+    def area(self):
+        if type(self.__width) is not int or type(self.__height) is not int:
+            raise TypeError('size must be an integer')
+        elif self.__width < 0 or self.__height < 0:
+            raise ValueError('size must be >= 0')
+        else:
+            return self.__width * self.__height
+
+    def perimeter(self):
+        if type(self.__width) is not int or type(self.__height) is not int:
+            raise TypeError('size must be an integer')
+        elif self.__width < 0 or self.__height < 0:
+            raise ValueError('size must be >= 0')
+        else:
+            return (self.__width * 2) + (self.__height * 2)
+
+    def __str__(self):
+        if type(self.__width) is not int or type(self.__height) is not int:
+            raise TypeError('size must be an integer')
+        elif self.__width < 0 or self.__height < 0:
+            raise ValueError('size must be >= 0')
+        else:
+            rec = []
+            if self.__width == 0 or self.__height == 0:
+                return ""
+            for i in range(0, self.__height):
+                for z in range(0, self.__width):
+                    rec.append("#")
+                if i != (self.__height - 1):
+                    rec.append("\n")
+            return ''.join(rec)
