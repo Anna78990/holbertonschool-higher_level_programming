@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
-a = 89
-b = 89
-
-ai = id(a)
-bi = id(b)
-print(ai)
-print(bi)
+s1 = [1, 2, 3]
+s2 = s1
+print(s1 == s2)
+print(id(s1))
+print(id(s2))
