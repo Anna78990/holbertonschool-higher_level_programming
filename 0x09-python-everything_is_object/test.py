@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+def increment(n):
+    n.append(4)
 
-s1 = [1, 2, 3]
-s2 = s1
-print(s1 == s2)
-print(id(s1))
-print(id(s2))
+l = [1, 2, 3]
+increment(l)
+print(l)
