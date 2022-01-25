@@ -9,7 +9,7 @@ class Rectangle:
             size (int):size of square
     """
 
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError('width must be an integer')
         elif width < 0:
@@ -35,7 +35,7 @@ class Rectangle:
             raise ValueError('width must be >= 0')
         else:
             self.__width = value
-    
+
     @property
     def height(self):
         return self.__height
@@ -82,17 +82,6 @@ class Rectangle:
             return ''.join(rec)
 
     def __repr__(self):
-        if type(self.__width) is not int or type(self.__height) is not int:
-            raise TypeError('size must be an integer')
-        elif self.__width < 0 or self.__height < 0:
-            raise ValueError('size must be >= 0')
-        else:
-            rec = []
-            if self.__width == 0 or self.__height == 0:
-                return ""
-            for i in range(0, self.__height):
-                for z in range(0, self.__width):
-                    rec.append("#")
-                    if i != (self.__height - 1):
-                        rec.append("\n")
-            return ''.join(rec)
+        rect = 'Rectangle(' + str(self.__width) + ',' + str(self.__height)\
+            + ')'
+        return rect
