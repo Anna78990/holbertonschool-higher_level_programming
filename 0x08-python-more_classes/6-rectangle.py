@@ -4,11 +4,12 @@
 
 class Rectangle:
 
-    number_of_instances = 0
     """A class used to represent a Square with the attribute size
         Attributes:
             size (int):size of square
     """
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         if type(width) is not int:
