@@ -1,5 +1,3 @@
 def copy_list(l):
-    new = []
-    for i in l:
-        new.append(i)
+    new = l[0:]
     return new
