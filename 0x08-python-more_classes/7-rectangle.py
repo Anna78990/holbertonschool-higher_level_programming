@@ -10,7 +10,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    print_symbol ="#"
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         if type(width) is not int:
@@ -25,16 +25,6 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         else:
             self.__height = height
-        Rectangle.number_of_instances += 1
-        Rectangle.print_symble = "#"
-
-    @property
-    def print_symbol(self):
-        return print_symbol
-
-    @print_symbol.setter
-    def print_symbol(self, value):
-        self.print_symbol = value
 
     @property
     def width(self):
@@ -89,7 +79,7 @@ class Rectangle:
                 return ""
             for i in range(0, self.__height):
                 for z in range(0, self.__width):
-                    rec.append(self.print_symbol)
+                    rec.append(str(self.print_symbol))
                 if i != (self.__height - 1):
                     rec.append("\n")
             return ''.join(rec)
