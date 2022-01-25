@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 a = 89
-b = 100
+b = 89
 
 ai = id(a)
 bi = id(b)
