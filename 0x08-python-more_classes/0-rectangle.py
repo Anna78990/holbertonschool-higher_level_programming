@@ -10,4 +10,3 @@ class Rectangle:
         initialize rectangle attributes
         """
         pass
-
