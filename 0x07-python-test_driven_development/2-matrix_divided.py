@@ -13,6 +13,8 @@ def matrix_divided(matrix, div):
     a = 0
     b = 0
     lis = []
+    if len(matrix) < 2:
+        raise TypeError("Each row of the matrix musthave 23 the same size")
     for i in range(0, 2):
         for j in matrix[i]:
             if type(j) != float and type(j) != int:
