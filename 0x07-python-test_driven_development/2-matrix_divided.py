@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 
 This module contains the function which can devide elements
@@ -17,9 +18,9 @@ def matrix_divided(matrix, div):
             if type(j) != float and type(j) != int:
                 raise TypeError("matrix must be a matrix (list of lists)\
                     of integers/floats")
-            if matrix[i] == 0:
+            if i == 0:
                 a += 1
-            if matrix[i] == 1:
+            if i == 1:
                 b += 1
     if a != b:
         raise TypeError("Each row of the matrix must have the same size")
