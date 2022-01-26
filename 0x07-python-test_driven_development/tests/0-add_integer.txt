@@ -11,16 +11,20 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 3, in add_integer
 TypeError: b must be an integer
->>> add_integer(1, 2.5)
-3
->>> add_integer(1.5, 2)
-3
->>> add_integer(3, 2)
-5
->>> add_integer(1.5, 1.5)
-2
->>> add_integer(None, None)
+>>> add_integer(1, )
+99
+>>> add_integer(NaN, 2)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "<stdin>", line 6, in add_integer
-TypeError: a must be an integer
+NameError: name 'NaN' is not defined
+>>> add_integer()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(float('inf'), )
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 9, in add_integer
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(1.5, 1.5)
+2
