@@ -24,4 +24,4 @@ Traceback (most recent call last):
 TypeError: first_name must be a string
 
 >>> say_my_name("Anna", "Takasu")
-My name is s 
+My name is Anna Takasu
