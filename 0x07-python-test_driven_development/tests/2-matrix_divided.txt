@@ -14,20 +14,24 @@ Traceback (most recent call last):
   File "<stdin>", line 22, in matrix_divided
 ZeroDivisionError: division by zero
 
->>> matrix = [[1, 2, 3],[4, 5]]
+>>> matrix =  [[3, 9], [12, 15, 3]]
 
->>> print(matrix_divided(matrix, 2))
+>>> print(matrix_divided(matrix, 3))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 18, in matrix_divided
 TypeError: Each row of the matrix must have the same size
 
->>> matrix = [[1, 2, 3],[4, 5, inf]]
+>>> matrix = [[3, '9'], [15, 3]] 
 
->>> print(matrix_divided(matrix, 3))
-[[0.33, 0.67, 1.0], [1.33, 1.67, inf]]
+>>> matrix =  [[3, '9'], [15, 3]]
 
->>> matrix = [[1, 2, 3],[4, 5, 0]]
+>>> print(matrix_divided(matrix, 2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 11, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
->>> print(matrix_divided(matrix, 3))
-[[0.33, 0.67, 1.0], [1.33, 1.67, 0.0]]
+>>> matrix =  [[3, 9], [12, 15]]
+>>> print(matrix_divided(matrix, -3))
+[[1.0, 3.0], [4.0, 5.0]]

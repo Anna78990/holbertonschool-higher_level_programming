@@ -17,7 +17,7 @@ def matrix_divided(matrix, div):
         for j in matrix[i]:
             if type(j) != float and type(j) != int:
                 raise TypeError("matrix must be a matrix (list of lists)\
-                    of integers/floats")
+ of integers/floats")
             if i == 0:
                 a += 1
             if i == 1:
