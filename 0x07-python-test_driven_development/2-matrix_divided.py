@@ -19,7 +19,7 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if len(matrix) == 1:
-        for i in range(0, len(matrix[0])):
+        for i in matrix[0]:
             if type(i) != float and type(i) != int:
                 raise TypeError("matrix must be a matrix (list of lists)\
  of integers/floats")
