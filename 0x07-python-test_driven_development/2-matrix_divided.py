@@ -29,5 +29,5 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     for n in range(0, 2):
-        lis.append(list(map(lambda x: round(x / 3, 2), matrix[n])))
+        lis.append(list(map(lambda x: round(x / div, 2), matrix[n])))
     return lis
