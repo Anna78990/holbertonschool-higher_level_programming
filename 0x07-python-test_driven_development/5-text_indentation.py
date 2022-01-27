@@ -2,14 +2,14 @@
 """
 
 this module prints a text with 2 new lines after each of these
-characters: ., ? and :
+characters ".", "?", ":"
 
 """
 
 
 def text_indentation(text):
     """
-    prints 2 new lines after each of characters: ".", "?", ":"
+    prints 2 new lines after each of characters ".", "?", ":"
     """
     if type(text) != str:
         raise TypeError("text must be a string")
