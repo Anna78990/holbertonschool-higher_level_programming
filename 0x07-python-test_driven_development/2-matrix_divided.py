@@ -6,13 +6,12 @@ This module contains the function which can devide elements
 """
 
 
-def matrix_divided(matrix, div):	
+def matrix_divided(matrix, div):
     """
     division
     """
     lis = []
-
-    if type(matrix) is list: 
+    if type(matrix) is list:
         if type(div) != float and type(div) != int:
             raise TypeError("div must be a number")
         if div == 0:
