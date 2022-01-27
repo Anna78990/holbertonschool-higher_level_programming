@@ -1,0 +1,19 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("I am Anna. age:32")
+I am Anna.
+
+age:
+
+32>>> text_indentation(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 6, in text_indentation
+TypeError: text must be a string
+>>> text_indentation(" ")
+>>> text_indentation("\n")
+
+>>> text_indentation()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: text_indentation() missing 1 required positional argument: 'text'
