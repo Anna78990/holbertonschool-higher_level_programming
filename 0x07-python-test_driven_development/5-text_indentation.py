@@ -12,7 +12,7 @@ def text_indentation(text):
     prints 2 new lines after each of characters: ".", "?", ":"
     """
     if type(text) != str:
-        TypeError("text must be a string")
+        raise TypeError("text must be a string")
     for i in range(0, len(text)):
         a = i - 1
         if text[i] == " " and \
