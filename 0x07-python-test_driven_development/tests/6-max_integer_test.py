@@ -26,3 +26,6 @@ class TestMaxInteger(unittest.TestCase):
         li6 = [-1, -2, -3, -4]
         actual6 = max_integer(li6)
         self.assertEqual(-1, actual6)
+        li7 = [1]
+        actual7 = max_integer(li7)
+        self.assertEqual(1, actual7)
