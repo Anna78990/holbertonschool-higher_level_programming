@@ -5,6 +5,8 @@ this module returns an object represented by JSON
 
 
 import json
+
+
 def from_json_string(my_str):
     """
     this module returns an object represented by JSON
