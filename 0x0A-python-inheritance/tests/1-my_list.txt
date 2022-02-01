@@ -1,5 +1,4 @@
 >>> MyList = __import__('1-my_list').MyList
->>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
 
 >>> my_list.append(1)
@@ -18,7 +17,7 @@
 [1, 4, 2, 3, 5]
 
 >>> print(MyList)
-<class '__main__.MyList'>
+<class '1-my_list.MyList'>
 >>> ml = MyList()
 >>> ml.append(1)
 >>> ml.append(2)
