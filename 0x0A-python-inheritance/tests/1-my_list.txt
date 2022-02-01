@@ -1,0 +1,13 @@
+>>> print(MyList)
+<class '__main__.MyList'>
+>>> ml = MyList()
+>>> ml.append(1)
+>>> ml.append(2)
+>>> ml.print_sorted()
+[1, 2]
+>>> s = MyList()
+>>> 
+>>> s.append(-1)
+>>> s.append(-5)
+>>> s.print_sorted()
+[-5, -1]
