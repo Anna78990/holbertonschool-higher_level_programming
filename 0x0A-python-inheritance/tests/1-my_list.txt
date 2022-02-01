@@ -1,3 +1,5 @@
+>>> MyList = __import__('1-my_list').MyList
+
 >>> print(MyList)
 <class '__main__.MyList'>
 >>> ml = MyList()
