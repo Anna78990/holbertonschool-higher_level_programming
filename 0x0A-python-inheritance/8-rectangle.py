@@ -4,7 +4,7 @@
 
 class BaseGeometry():
     """
-    this module contains class BaseGeometry
+    class BaseGeometry
     """
     def area(self):
         raise Exception('area() is not implemented')
@@ -17,6 +17,9 @@ class BaseGeometry():
 
 
 class Rectangle(BaseGeometry):
+    """
+    class Rectangle
+    """
     def __init__(self, width, height):
         super().integer_validator("width", width)
         super().integer_validator("height", height)
