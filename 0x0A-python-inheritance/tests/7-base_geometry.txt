@@ -1,5 +1,8 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+>>> print(BaseGeometry)
+<class '7-base_geometry.BaseGeometry'>
+
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("name", "John")
@@ -21,8 +24,6 @@ Traceback (most recent call last):
 ValueError: distance must be greater than 0
 
 >>> b = BaseGeometry()
->>> b.area
-<bound method BaseGeometry.area of <__main__.BaseGeometry object at 0x7f1c5dc8fdf0>>
 >>> b.area()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
