@@ -29,8 +29,4 @@ class Rectangle(BaseGeometry):
 
 class Square (Rectangle):
     def __init__(self, size):
-        super(Square, self).__init__(self,size)
-        super().integer_validator("size", size)
-        self.__size = size
-        _Rectangle__width = size
-        _Rectangle__height = size
+        super(Square, self).__init__(size, size)
