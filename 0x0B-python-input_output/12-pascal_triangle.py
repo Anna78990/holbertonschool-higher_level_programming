@@ -3,6 +3,7 @@
 this module contains function pascal_triangle
 """
 
+
 def pascal_triangle(n):
     """
     function to make pascal_triangle
@@ -12,7 +13,7 @@ def pascal_triangle(n):
         if i == 0:
             pl.append([1])
         elif i == 1:
-            pl.append([1,1])
+            pl.append([1, 1])
         else:
             m = []
             for num in range(0, i + 1):
