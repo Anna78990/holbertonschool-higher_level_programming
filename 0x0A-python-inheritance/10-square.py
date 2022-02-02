@@ -4,19 +4,22 @@
 
 class BaseGeometry():
     """
-    this module contains class BaseGeometry
+    class BaseGeometry
     """
     def area(self):
         raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
         if type(value) != int:
-                raise TypeError("{} must be an integer".format(name))
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-                raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
+    """
+    class Rectangle
+    """
     def __init__(self, width, height):
         super().integer_validator("width", width)
         super().integer_validator("height", height)
@@ -31,6 +34,10 @@ class Rectangle(BaseGeometry):
     def area(self):
         return self.__width * self.__height
 
+
 class Square (Rectangle):
+    """
+    class Sqaure
+    """
     def __init__(self, size):
         super(Square, self).__init__(size, size)
