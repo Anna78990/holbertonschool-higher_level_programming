@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""this module contains class BaseGeometry"""
+
 
 class BaseGeometry():
-
+    """
+    this module contains class BaseGeometry
+    """
     def area(self):
         raise Exception('area() is not implemented')
 
