@@ -16,3 +16,21 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 8, in integer_validator
 ValueError: distance must be greater than 0
+>>> b = BaseGeometry()
+>>> b.area
+<bound method BaseGeometry.area of <__main__.BaseGeometry object at 0x7f1c5dc8fdf0>>
+>>> b.area()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in area
+Exception: area() is not implemented
+>>> b.integer_validator()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+SyntaxError: invalid character in identifier
+>>> b.integer_validator(“age”)
+  File "<stdin>", line 1
+    b.integer_validator(“age”)
+                            ^
+SyntaxError: invalid character in identifier
