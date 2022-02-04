@@ -94,21 +94,37 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
     .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         le = len(args)
-        if le == 0:
+        kk = kwargs.keys()
+        if le == 0 and len(kk) == 0:
             return
-        for i in range(0, le):
-            if i == 0:
-                self.id = args[0]
-            if i == 1:
-                self.__width = args[1]
-            if i == 2:
-                self.__height = args[2]
-            if i == 3:
-                self.__x = args[3]
-            if i == 4:
-                self.__y = args[4]
+        if le > 0:
+            for i in range(0, le):
+                if i == 0:
+                    self.id = args[0]
+                if i == 1:
+                    self.__width = args[1]
+                if i == 2:
+                    self.__height = args[2]
+                if i == 3:
+                     self.__x = args[3]
+                if i == 4:
+                     self.__y = args[4]
+            return
+        else:
+            if len(kk) > 0:
+                for k, v in kwargs.items():
+                    if k == "id":
+                        self.id = v
+                    if k == "width":
+                        self.__width = v
+                    if k == "height":
+                        self.__height = v
+                    if k == "x":
+                        self.__x = v
+                    if k == "y":
+                        self.__y = v
 
     def to_dictionary(self):
         return dict(x = self.__x, y = self.__y, id = self.id, height = self.__height, width = self.__width)
