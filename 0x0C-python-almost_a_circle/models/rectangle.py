@@ -79,8 +79,13 @@ class Rectangle(Base):
 
     def display(self):
         if self.__width == 0 or self.__height == 0:
+            print("")
+        if self.__y > 0:
+            for u in range(0, self.__y):
                 print("")
         for i in range(0, self.__height):
+            for e in range(0, self.x):
+                print(" ", end="")
             for z in range(0, self.__width):
                 print("#", end="")
             print("")
@@ -88,3 +93,22 @@ class Rectangle(Base):
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
     .format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        le = len(args)
+        if le == 0:
+            return
+        for i in range(0, le):
+            if i == 0:
+                self.id = args[0]
+            if i == 1:
+                self.__width = args[1]
+            if i == 2:
+                self.__height = args[2]
+            if i == 3:
+                self.__x = args[3]
+            if i == 4:
+                self.__y = args[4]
+
+    def to_dictionary(self):
+        return dict(x = self.__x, y = self.__y, id = self.id, height = self.__height, width = self.__width)
