@@ -5,6 +5,14 @@ from models.base import Base
 
 class Rectangle(Base):
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
+        self.int_valid(width=width, height=height, x=x, y=y)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+
     @staticmethod
     def int_valid(**kwargs):
         for k, v in kwargs.items():
@@ -18,15 +26,6 @@ class Rectangle(Base):
                     raise TypeError("{} must be an integer".format(k))
                 if v < 0:
                     raise ValueError("{} must be >= 0".format(k))
-
-
-    def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
-        self.int_valid(width=width, height=height, x=x, y=y)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
     @property
     def width(self):
