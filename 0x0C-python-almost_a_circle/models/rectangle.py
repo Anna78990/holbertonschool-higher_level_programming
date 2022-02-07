@@ -5,7 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-
+    """A class used to represent a Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.int_valid(width=width, height=height, x=x, y=y)
