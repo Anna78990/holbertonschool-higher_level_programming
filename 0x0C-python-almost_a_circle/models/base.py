@@ -2,6 +2,9 @@
 """This module contains a class representing Base"""
 
 import json
+import os
+
+
 class Base:
     """A class used to represent a Base"""
     __nb_objects = 0
@@ -37,5 +40,20 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         dummy = cls(1, 1)
-        dummy.update(dictionary)
+        dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = "{}.json".format(cls.__name__)
+        is_file = os.path.isfile(filename)
+        if is_file is True:
+            with open(filename, 'r') as f:
+                json_s = f.read()
+            json_list = cls.from_json_string(json_s)
+            list_insta = []
+            for json_dic in json_list:
+                list_insta.append(cls.create(**json_dic))
+            return list_insta
+        else:
+            return []
