@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -81,7 +82,7 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
-    .format(self.id, self.__x, self.__y, self.__width, self.__height)
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         le = len(args)
@@ -97,9 +98,9 @@ class Rectangle(Base):
                 if i == 2:
                     self.__height = args[2]
                 if i == 3:
-                     self.__x = args[3]
+                    self.__x = args[3]
                 if i == 4:
-                     self.__y = args[4]
+                    self.__y = args[4]
             return
         else:
             if len(kk) > 0:
@@ -116,4 +117,9 @@ class Rectangle(Base):
                         self.__y = v
 
     def to_dictionary(self):
-        return dict(x = self.__x, y = self.__y, id = self.id, height = self.__height, width = self.__width)
+        a = self.__x
+        b = self.__y
+        c = self.id
+        d = self.__height
+        f = self.__width
+        return dict(x=a, y=b, id=c, height=d, width=f)
