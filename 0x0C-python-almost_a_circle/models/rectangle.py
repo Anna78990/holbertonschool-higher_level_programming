@@ -15,7 +15,8 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
+        """ constructor of Rectange class """
+	super().__init__(id)
         self.int_valid(width=width, height=height, x=x, y=y)
         self.__width = width
         self.__height = height
@@ -24,6 +25,7 @@ class Rectangle(Base):
 
     @staticmethod
     def int_valid(**kwargs):
+        """ valide if it is int """
         for k, v in kwargs.items():
             if k == "width" or k == "height":
                 if type(v) != int:
@@ -38,44 +40,54 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ getter of width """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """ setter of width"""
         self.int_valid(width=value)
         self.__width = value
 
     @property
     def height(self):
+        """ getter of height """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """ setter of height """
         self.int_valid(height=value)
         self.__height = value
 
     @property
     def x(self):
+        """ getter of x """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """ setter of x """
         self.int_valid(x=value)
         self.__x = value
 
     @property
     def y(self):
+        """ getter of y """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """ setter of y """
         self.int_valid(y=value)
         self.__y = value
 
     def area(self):
+        """ calucurate the area """
         return self.__width * self.__height
 
     def display(self):
+        """ print the rectangle """
         if self.__width == 0 or self.__height == 0:
             print("")
         if self.__y > 0:
@@ -89,10 +101,12 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """ str representation """
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """ update the instance """
         le = len(args)
         kk = kwargs.keys()
         if le == 0 and len(kk) == 0:
@@ -125,6 +139,7 @@ class Rectangle(Base):
                         self.__y = v
 
     def to_dictionary(self):
+        """ return the attributes of dict"""
         a = self.__x
         b = self.__y
         c = self.id
