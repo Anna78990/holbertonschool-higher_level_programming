@@ -1,11 +1,18 @@
 #!/usr/bin/python3
 """This module contains a class representing Rectangle"""
-
 from models.base import Base
 
 
 class Rectangle(Base):
-    """A class used to represent a Rectangle"""
+    """
+    A class used to represent a Rectangle
+    Attributes:
+        width (int): width of rectangle
+        height (int): height of rectangle
+        x (int): x of rectangle
+        y (int): y of rectangle
+        id (int): id of the instance
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
