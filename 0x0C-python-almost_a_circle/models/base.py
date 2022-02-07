@@ -37,4 +37,5 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         dummy = cls(1, 1)
-        return dummy.update(dictionary)
+        dummy.update(dictionary)
+        return dummy
