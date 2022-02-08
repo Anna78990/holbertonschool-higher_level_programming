@@ -20,18 +20,18 @@ class Square(Rectangle):
     def __str__(self):
         """ string representation of square """
         return "[Square] ({}) {}/{} - {}".\
-            format(self.id, self.__x, self.__y, self.__size)
+            format(self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
         """ getter of size """
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
         """ setter of size"""
         Rectangle.int_valid(width=value)
-        self.__size = value
+        self.width = value
 
     def update(self, *args, **kwargs):
         """ update an instance """
@@ -56,12 +56,12 @@ class Square(Rectangle):
                     if k == "id":
                         self.id = v
                     if k == "size":
-                        self.__size = v
+                        self.width = v
                     if k == "x":
-                        self.__x = v
+                        self.x = v
                     if k == "y":
-                        self.__y = v
+                        self.y = v
 
     def to_dictionary(self):
         """ convert to dict """
-        return dict(id=self.id, x=self.__x, size=self.__size, y=self.__y)
+        return dict(id=self.id, x=self.x, size=self.width, y=self.y)
