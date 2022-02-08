@@ -15,11 +15,7 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """ constructor of Square class """
-        self.__size = size
-        self.__x = x
-        self.__y = y
-        self.id = id
-        super(Square, self).__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ string representation of square """
