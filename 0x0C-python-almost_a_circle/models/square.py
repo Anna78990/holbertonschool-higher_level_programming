@@ -2,9 +2,17 @@
 """ class Square """
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
 
-
+    """
+    A class used to represent a Rectangle
+    Attributes:
+        size (int): size of rectangle
+        x (int): x of rectangle
+        y (int): y of rectangle
+        id (int): id of the instance
+    """
     def __init__(self, size, x=0, y=0, id=None):
         self.__size = size
         self.__x = x
@@ -13,7 +21,8 @@ class Square(Rectangle):
         super(Square, self).__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.__x, self.__y, self.__size)
+        return "[Square] ({}) {}/{} - {}".\
+            format(self.id, self.__x, self.__y, self.__size)
 
     @property
     def size(self):
@@ -53,4 +62,4 @@ class Square(Rectangle):
                         self.__y = v
 
     def to_dictionary(self):
-        return dict(id = self.id, x = self.__x, size = self.__size, y = self.__y)
+        return dict(id=self.id, x=self.__x, size=self.__size, y=self.__y)
