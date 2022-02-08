@@ -14,6 +14,7 @@ class Square(Rectangle):
         id (int): id of the instance
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """ constructor of Square class """
         self.__size = size
         self.__x = x
         self.__y = y
@@ -21,19 +22,23 @@ class Square(Rectangle):
         super(Square, self).__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ string representation of square """
         return "[Square] ({}) {}/{} - {}".\
             format(self.id, self.__x, self.__y, self.__size)
 
     @property
     def size(self):
+        """ getter of size """
         return self.__size
 
     @size.setter
     def size(self, value):
+        """ setter of size"""
         Rectangle.int_valid(width=value)
         self.__size = value
 
     def update(self, *args, **kwargs):
+        """ update an instance """
         le = len(args)
         kk = kwargs.keys()
         if le == 0 and len(kk) == 0:
@@ -62,4 +67,5 @@ class Square(Rectangle):
                         self.__y = v
 
     def to_dictionary(self):
+        """ convert to dict """
         return dict(id=self.id, x=self.__x, size=self.__size, y=self.__y)
