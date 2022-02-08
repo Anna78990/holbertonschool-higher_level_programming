@@ -30,8 +30,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """ setter of size"""
-        Rectangle.int_valid(width=value)
         self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """ update an instance """
