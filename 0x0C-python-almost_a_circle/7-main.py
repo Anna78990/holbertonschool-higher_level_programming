@@ -7,17 +7,33 @@ if __name__ == "__main__":
     r1 = Rectangle(10, 10, 10, 10)
     print(r1)
 
+    r1.update()
+    print(r1)
+
     r1.update(89)
     print(r1)
 
-    r1.update(89, 2)
+    r1.update(89, 1)
     print(r1)
 
-    r1.update(89, 2, 3)
+    r1.update(89, 1, 2)
     print(r1)
 
-    r1.update(89, 2, 3, 4)
+    r1.update(89, 1, 2, 3)
     print(r1)
 
-    r1.update(89, 2, 3, 4, 5)
+    r1.update(89, 1, 2, 3)
     print(r1)
+
+    r1.update(**{ 'id': 89 })
+    print(r1)
+
+    r1.update(**{ 'id': 89, 'width': 1, 'height': 2 })
+    print(r1)
+
+    r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+    print(r1)
+
+    r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+    print(r1)
+

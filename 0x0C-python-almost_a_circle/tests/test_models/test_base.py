@@ -16,20 +16,24 @@ class TestBase(unittest.TestCase):
         """
         b = Base()
         self.assertEqual(b.id, 1)
+
+    def test_id2(self):
         b = Base()
         self.assertEqual(b.id, 2)
-        b = Base(2)
-        self.assertEqual(b.id, 2)
+
+    def test_id3(self):
+        b = Base(98)
+        self.assertEqual(b.id, 98)
 
     def test_to_string(self):
         """test method for to_string of base
         """
         json_dictionary = Base.to_json_string(None)
-        self.assertEqual(json_dictionary, [])
+        self.assertEqual(json_dictionary, "[]")
         json_dictionary = Base.to_json_string([ { 'id': 12 }])
-        self.assertEqual(json_dictionary, [])
+        self.assertEqual(json_dictionary, "[]")
         json_dictionary = Base.to_json_string([ { 'id': 12 }])        
-        self.assertEqual(json_dictionary, [{"id": 12}])
+        self.assertEqual(json_dictionary, "[{"id": 12}]")
 
     def test_from_jason_string(self):
         """test method from_json_string of base
