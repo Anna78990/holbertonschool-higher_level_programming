@@ -7,16 +7,20 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBase(unittest.TestCase):
     """ Test of class Base """
 
     def test_id(self):
+        """test method for id of base
+        """
         b = Base()
         self.assertEqual(b.id, 1)
         b = Base()
         self.assertEqual(b.id, 2)
         b = Base(2)
         self.assertEqual(b.id, 2)
+
 
 if __name__ == "__main__":
     unittest.main()
