@@ -16,7 +16,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ constructor of Rectange class """
-	super().__init__(id)
+        super().__init__(id)
         self.int_valid(width=width, height=height, x=x, y=y)
         self.__width = width
         self.__height = height
