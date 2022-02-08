@@ -26,9 +26,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         filename = "{}.json".format(cls.__name__)
-        le = len(list_objs)
         my_obj = []
         if list_objs is not None:
+            le = len(list_objs)
             for i in range(0, le):
                 my_obj.append(list_objs[i].to_dictionary())
         with open(filename, 'w+') as f:
