@@ -233,11 +233,11 @@ class TestSquare(unittest.TestCase):
             f = file.read()
         self.assertEqual(f[-9:], " \"y\": 0}]")
 
+    """
     def test_load_from_file(self):
-        """test method load a file
-        """
         s = Square.load_from_file()
         self.assertEqual(s, [])
+    """
 
     def test_load_from_file2(self):
         """test method load a file
