@@ -68,11 +68,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
 
-    def area(self):
+    def test_area(self):
         """test method for the calculation of area
         """
         r2 = Rectangle(2, 10)
-        self.assertEqual(r2, 20)
+        self.assertEqual(r2.area(), 20)
 
     def test_update(self):
         """test method update the instance by args
@@ -235,11 +235,13 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(1, 2, 3, 0, 89)
         self.assertEqual(r1.id, r2.id)
 
-    def create_rectangle4(self):
+    def test_reate_rectangle4(self):
         """test method create new instance
         """
         r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
-        r2 = Rectangle(1, 2, 3, 4, 89)
+        r = Rectangle(1, 2, 3, 4, 89)
+        rd = r.to_dictionary()
+        r2 = Rectangle.create(**rd)
         self.assertEqual(r1.id, r2.id)
 
 
