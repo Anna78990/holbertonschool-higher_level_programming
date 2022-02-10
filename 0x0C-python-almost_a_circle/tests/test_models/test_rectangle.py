@@ -75,6 +75,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2, 20)
 
     def test_update(self):
+        """test method update the instance by args
+        """
         r1 = Rectangle(2, 3, 4, 5, 1)
         r1.update()
         r2 = Rectangle(2, 3, 4, 5, 1)
@@ -216,6 +218,7 @@ class TestRectangle(unittest.TestCase):
         """
         r1 = Rectangle.create(**{ 'id': 89, 'width': 1 })
         r2 = Rectangle(1, 1, 0, 0, 89)
+        self.assertEqual(r1.id, r2.id)
         self.assertEqual(r1.width, r2.width)
 
     def create_rectangle3(self):
