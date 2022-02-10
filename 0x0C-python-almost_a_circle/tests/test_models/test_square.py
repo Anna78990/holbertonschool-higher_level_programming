@@ -236,18 +236,18 @@ class TestSquare(unittest.TestCase):
     def test_load_from_file(self):
         """test method load a file
         """
-        with self.assertRaises(NameError):
-            r = Rectange.load_from_file()
+        s = Square.load_from_file()
+        self.assertEqual(s, [])
 
     def test_load_from_file2(self):
         """test method load a file
         """
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
-        list_rectangles_input = [r1, r2]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(str(list_rectangles_output[0])[-10:], "2/8 - 10/7")
+        s1 = Square(10, 7, 2, 8)
+        s2 = Square(2, 4)
+        list_squares_input = [s1, s2]
+        Square.save_to_file(list_squares_input)
+        list_squares_output = Square.load_from_file()
+        self.assertEqual(str(list_squares_output[0])[-9:], " 7/2 - 10")
 
 if __name__ == "__main__":
     unittest.main()
