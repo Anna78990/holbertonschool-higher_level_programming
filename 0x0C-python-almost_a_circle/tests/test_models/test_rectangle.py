@@ -263,10 +263,10 @@ class TestRectangle(unittest.TestCase):
     def test_save_to_file3(self):
         """test method save to file
         """
-        Rectangle.save_to_file([Rectangle(1, 2, 0, 0, 1)])
+        Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as file:
             f = file.read()
-        self.assertEqual(f, "[{\"x\": 0, \"y\": 0, \"id\": 1, \"height\": 2, \"width\": 1}]")
+        self.assertEqual(f, "[{\"x\": 0, \"y\": 0, \"id\": 28, \"height\": 2, \"width\": 1}]")
 
     def test_load_from_file(self):
         """test method load a file
