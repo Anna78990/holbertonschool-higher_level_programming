@@ -206,14 +206,14 @@ class TestRectangle(unittest.TestCase):
         b = "##\n##\n##\n"
         self.assertEqual(a,b)
 
-    def create_rectangle(self):
+    def test_create_rectangle(self):
         """test method create new instance
         """
         r1 = Rectangle.create(**{'id': 89})
         r2 = Rectangle(1, 1, 0, 0, 89)
         self.assertEqual(r1.id, r2.id)
 
-    def create_rectangle2(self):
+    def test_create_rectangle2(self):
         """test method create new instance
         """
         r1 = Rectangle.create(**{'id': 89, 'width': 1})
@@ -221,14 +221,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.id, r2.id)
         self.assertEqual(r1.width, r2.width)
 
-    def create_rectangle3(self):
+    def test_create_rectangle3(self):
         """test method create new instance
         """
         r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
         r2 = Rectangle(1, 2, 0, 0, 89)
         self.assertEqual(r1.width, r2.width)
 
-    def create_rectangle4(self):
+    def test_create_rectangle4(self):
         """test method create new instance
         """
         r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
