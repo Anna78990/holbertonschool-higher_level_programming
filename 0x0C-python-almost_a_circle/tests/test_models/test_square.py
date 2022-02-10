@@ -77,89 +77,73 @@ class TestSquare(unittest.TestCase):
     def test_update_by_args(self):
         """test method update the instance by args
         """
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update()
-        r2 = Rectangle(10, 10, 10, 10, 1)
-        self.assertEqual(r1.width, r2.width)
+        s1 = Square(10, 10, 10, 10)
+        s1.update()
+        s2 = Square(10, 10, 10, 10)
+        self.assertEqual(s1.width, s2.width)
 
     def test_update_by_args2(self):
         """test method update the instance by args
         """
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89, 1)
-        r2 = Rectangle(1, 10, 10, 10, 89)
-        self.assertEqual(r1.id, r2.id)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(89)
+        self.assertEqual(s1.id, 89)
 
     def test_update_by_args3(self):
         """test method update the instance by args
         """
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89, 1, 2)
-        r2 = Rectangle(1, 2, 10, 10, 89)
-        self.assertEqual(r1.width, r2.width)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(89, 1)
+        self.assertEqual(s1.size, 1)
 
     def test_update_by_args4(self):
         """test method update the instance by args
         """
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89, 1, 2, 3)
-        r2 = Rectangle(1, 2, 3, 10, 89)
-        self.assertEqual(r1.height, r2.height)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(89, 1, 2)
+        self.assertEqual(s1.x, 2)
 
     def test_update_by_args5(self):
         """test method update the instance by args
         """
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89, 1, 2, 3, 4)
-        r2 = Rectangle(1, 2, 3, 4, 89)
-        self.assertEqual(r1.x, r2.x)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(89, 1, 2, 3)
+        self.assertEqual(s1.y, 3)
 
     def test_update_by_kwargs(self):
         """test method update the instance by **kwargs
        	"""
-        r1 = Rectangle(10, 10, 10, 10, 1)
-        r1.update(**{ 'id': 89 })
-        r2 = Rectangle(10, 10, 10, 10, 89)
-        self.assertEqual(r1.id, r2.id)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(**{ 'id': 89 })
+        self.assertEqual(s1.id, 89)
 
     def test_update_by_kwargs2(self):
         """test method update the instance by **kwargs
        	"""
-        r1 = Rectangle(10, 10, 10, 10, 1)
-        r1.update(**{ 'id': 89, 'width': 1 })
-        r2 = Rectangle(1, 10, 10, 10, 89)
-        self.assertEqual(r1.width, r2.width)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(**{ 'id': 89, 'size': 1 })
+        self.assertEqual(s1.size, 1)
 
     def test_update_by_kwargs3(self):
         """test method update the instance by **kwargs
        	"""
-        r1 = Rectangle(10, 10, 10, 10, 1)
-        r1.update(**{ 'id': 89, 'width': 1, 'height': 2 })
-        r2 = Rectangle(1, 2, 10, 10, 89)
-        self.assertEqual(r1.height, r2.height)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(**{ 'id': 89, 'size': 1, 'x': 2 })
+        self.assertEqual(s1.x, 2)
 
     def test_update_by_kwargs4(self):
         """test method update the instance by **kwargs
        	"""
-        r1 = Rectangle(10, 10, 10, 10, 1)
-        r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
-        r2 = Rectangle(1, 2, 3, 10, 89)
-        self.assertEqual(r1.x, r2.x)
-
-    def test_update_by_kwargs5(self):
-        """test method update the instance by **kwargs
-       	"""
-        r1 = Rectangle(10, 10, 10, 10, 1)
-        r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
-        r2 = Rectangle(1, 2, 3, 4, 89)
-        self.assertEqual(r1.y, r2.y)
+        s1 = Square(10, 10, 10, 10)
+        s1.update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        self.assertEqual(s1.y, 3)
 
     def test_string(self):
         """test method check __str()__
        	"""
-        r1 = Rectangle(4, 6, 2, 1, 12)
-        strr = r1.__str__()
-        strrr = "[Rectangle] (12) 2/1 - 4/6"
+        s1 = Square(4, 6, 2, 1)
+        strr = s1.__str__()
+        strrr = "[Square] (1) 6/2 - 4"
         self.assertEqual(strr, strrr)
 
     def test_display(self):
@@ -201,40 +185,29 @@ class TestSquare(unittest.TestCase):
     def test_create_rectangle(self):
         """test method create new instance
         """
-        r1 = Rectangle.create(**{'id': 89})
-        r2 = Rectangle(1, 1, 0, 0, 89)
-        self.assertEqual(r1.id, r2.id)
+        s1 = Square.create(**{'id': 89})
+        self.assertEqual(s1.id, 89)
 
     def test_create_rectangle2(self):
         """test method create new instance
         """
-        r1 = Rectangle.create(**{'id': 89, 'width': 1})
-        r2 = Rectangle(1, 1, 0, 0, 89)
-        self.assertEqual(r1.id, r2.id)
-        self.assertEqual(r1.width, r2.width)
+        s1 = Square.create(**{'id': 89, 'size': 1})
+        self.assertEqual(s1.size, 1)
 
     def test_create_rectangle3(self):
         """test method create new instance
         """
-        r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
-        r2 = Rectangle(1, 2, 0, 0, 89)
-        self.assertEqual(r1.width, r2.width)
+        s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+        self.assertEqual(s1.x, 2)
 
     def test_create_rectangle4(self):
         """test method create new instance
         """
-        r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
-        r2 = Rectangle(1, 2, 3, 0, 89)
-        self.assertEqual(r1.id, r2.id)
-
-    def test_reate_rectangle4(self):
-        """test method create new instance
-        """
-        r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
-        r = Rectangle(1, 2, 3, 4, 89)
-        rd = r.to_dictionary()
-        r2 = Rectangle.create(**rd)
-        self.assertEqual(r1.id, r2.id)
+        s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        s2 = Square(1, 2, 3, 89)
+        sd = s2.to_dictionary()
+        ss = Square.create(**sd)
+        self.assertEqual(s1.id, ss.id)
 
     def test_save_to_file(self):
         """test method save to file

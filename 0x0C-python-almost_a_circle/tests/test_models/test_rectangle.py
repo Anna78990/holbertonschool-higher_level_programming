@@ -235,7 +235,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(1, 2, 3, 0, 89)
         self.assertEqual(r1.id, r2.id)
 
-    def test_reate_rectangle4(self):
+    def test_create_rectangle4(self):
         """test method create new instance
         """
         r1 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
