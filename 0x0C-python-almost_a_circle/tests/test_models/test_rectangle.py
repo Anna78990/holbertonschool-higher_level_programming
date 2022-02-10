@@ -244,8 +244,35 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle.create(**rd)
         self.assertEqual(r1.id, r2.id)
 
+    def test_save_to_file(self):
+        """test method save to file
+        """
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            f = file.read()
+        self.assertEqual(f, "[]")
 
+    def test_save_to_file2(self):
+        """test method save to file
+        """
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            f = file.read()
+        self.assertEqual(f, "[]")
 
+    def test_save_to_file3(self):
+        """test method save to file
+        """
+        Rectangle.save_to_file([Rectangle(1, 2, 0, 0, 1)])
+        with open("Rectangle.json", "r") as file:
+            f = file.read()
+        self.assertEqual(f, "[{\"x\": 0, \"y\": 0, \"id\": 1, \"height\": 2, \"width\": 1}]")
 
+    def test_load_from_file(self):
+        """test method load a file
+        """
+        with self.assertRaises(NameError):
+            r = Rectange.load_from_file()
+	
 if __name__ == "__main__":
     unittest.main()
