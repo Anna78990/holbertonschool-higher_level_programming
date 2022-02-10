@@ -7,10 +7,5 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
-capturedOutput = io.StringIO()
-sys.stdout = capturedOutput
-r1 = Rectangle(2, 3, 2, 2)
-r1.display()
-sys.stdout = sys.__stdout__
-a = capturedOutput.getvalue()
-print(a)
+r1 = Rectangle.create(**{ 'id': 89 })
+print(r1)
