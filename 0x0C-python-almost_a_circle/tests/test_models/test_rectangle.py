@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Unittest of Rectangle class"""
-
+import io
+import sys
 import unittest
 import os
 from models.base import Base
@@ -152,6 +153,28 @@ class TestRectangle(unittest.TestCase):
         r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
         r2 = Rectangle(1, 2, 3, 4, 89)
         self.assertEqual(r1.y, r2.y)
+
+    def test_string(self):
+        """test method check __str()__
+       	"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        strr = r1.__str__()
+        strrr = "[Rectangle] (12) 2/1 - 4/6"
+        self.assertEqual(strr, strrr)
+
+    def test_display(self):
+        """test method check output of display
+       	"""
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        r1 = Rectangle(2, 3, 2, 2)
+        r1.display()
+        sys.stdout = sys.__stdout__
+        a = capturedOutput.getvalue()
+        b = "\n\n  ##\n  ##\n  ##\n"
+        self.assertEqual(a,b)
+
+
 
 if __name__ == "__main__":
     unittest.main()
