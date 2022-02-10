@@ -182,25 +182,25 @@ class TestSquare(unittest.TestCase):
         b = "##\n##\n##\n"
         self.assertEqual(a,b)
 
-    def test_create_rectangle(self):
+    def test_create_square(self):
         """test method create new instance
         """
         s1 = Square.create(**{'id': 89})
         self.assertEqual(s1.id, 89)
 
-    def test_create_rectangle2(self):
+    def test_create_square2(self):
         """test method create new instance
         """
         s1 = Square.create(**{'id': 89, 'size': 1})
         self.assertEqual(s1.size, 1)
 
-    def test_create_rectangle3(self):
+    def test_create_square3(self):
         """test method create new instance
         """
         s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
         self.assertEqual(s1.x, 2)
 
-    def test_create_rectangle4(self):
+    def test_create_square4(self):
         """test method create new instance
         """
         s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
@@ -212,26 +212,26 @@ class TestSquare(unittest.TestCase):
     def test_save_to_file(self):
         """test method save to file
         """
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as file:
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
             f = file.read()
         self.assertEqual(f, "[]")
 
     def test_save_to_file2(self):
         """test method save to file
         """
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as file:
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
             f = file.read()
         self.assertEqual(f, "[]")
 
     def test_save_to_file3(self):
         """test method save to file
         """
-        Rectangle.save_to_file([Rectangle(1, 2)])
-        with open("Rectangle.json", "r") as file:
+        Square.save_to_file([Square(1)])
+        with open("Square.json", "r") as file:
             f = file.read()
-        self.assertEqual(f[0:9], "[{\"x\": 0,")
+        self.assertEqual(f[-9:], " \"y\": 0}]")
 
     def test_load_from_file(self):
         """test method load a file
