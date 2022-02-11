@@ -31,7 +31,7 @@ class Base:
             le = len(list_objs)
             for i in range(0, le):
                 my_obj.append(list_objs[i].to_dictionary())
-        with open(filename, 'w+') as f:
+        with open(filename, 'w') as f:
             f.write(cls.to_json_string(my_obj))
 
     @staticmethod
