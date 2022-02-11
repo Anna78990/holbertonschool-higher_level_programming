@@ -47,5 +47,21 @@ class TestBase(unittest.TestCase):
         list_output = Base.from_json_string('[{ "id": 89 }]')
         self.assertEqual(list_output, [{'id': 89}])
 
+    def test_save_to_file2(self):
+        """test method save to file
+        """
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            f = file.read()
+        self.assertEqual(f, "[]")
+
+    def test_save_to_file2(self):
+        """test method save to file
+        """
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            f = file.read()
+        self.assertEqual(f, "[]")
+
 if __name__ == "__main__":
     unittest.main()
