@@ -6,3 +6,4 @@ ON tsg.show_id = ts.id
 LEFT JOIN tv_genres AS tg
 ON tg.id = tsg.genre_id
 WHERE title = 'Dexter'
+ORDER BY name ASC
