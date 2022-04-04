@@ -5,7 +5,7 @@ if (argv[2] && isNaN(argv[2]) === false) {
   if (n > 0) {
     const arr = [];
     for (let j = 0; j < n; j++) {
-      arr.push('x');
+      arr.push('X');
     }
     const arr2 = arr.join('');
     for (let i = 0; i < n; i++) {
@@ -13,5 +13,5 @@ if (argv[2] && isNaN(argv[2]) === false) {
     }
   }
 } else {
-  console.log('Missing number of size');
+  console.log('Missing size');
 }
