@@ -6,7 +6,7 @@ module.exports = class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (c = 'x') {
+  charPrint (c = 'X') {
     if (this.width !== undefined) {
       const arr = [];
       for (let i = 0; i < this.width; i++) {
