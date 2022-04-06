@@ -1,20 +1,31 @@
 #!/usr/bin/node
 const dict = require('./101-data.js').dict;
-let m = 0;
+const index = [];
 const obj = {};
 for (const [, value] of Object.entries(dict)) {
-  if (value > m) {
-    m = value;
+  if (index[0]) {
+    for (let i = 0; i < index.length; i++) {
+      if (index[i] === value) {
+        break;
+      } else if (index[i] !== value && i === index.length - 1) {
+        index.push(value);
+      }
+    }
+  } else {
+    index.push(value);
   }
 }
-for (let i = 1; i <= m; i++) {
+
+for (let i = 0; i < index.length; i++) {
   const arr = [];
   for (const [key, value] of Object.entries(dict)) {
-    if (value === i) {
+    if (value === index[i]) {
       arr.push(key);
     }
   }
-  obj[i] = arr;
+  const idx = index[i];
+  if (arr) {
+    obj[idx] = arr;
+  }
 }
-
 console.log(obj);
