@@ -12,7 +12,9 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 session = Session(engine)
-state_name = session.query(State).filter(State.id == 2).first()
-state_name.name = "New Mexico"
+if (State):
+    for state in session.query(State).order_by(State.id).all():
+        if (state.name.find('a') != -1) or (state.name.find('A') != -1):
+            session.query(State).filter(State.id == state.id).delete()
 session.commit()
 session.close()
