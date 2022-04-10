@@ -3,6 +3,10 @@
 
 lists all states from the database hbtn_0e_0_usa
 
+Arguments:
+    mysql username sys.argv[1]
+    mysql password sys.argv[2]
+    database name sys.argv[3]
 """
 import sys
 import MySQLdb
