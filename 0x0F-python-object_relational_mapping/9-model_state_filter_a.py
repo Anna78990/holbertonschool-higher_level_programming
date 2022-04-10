@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""
+lists all State objects that contain the letter 'a'
 """
 import sys
 from model_state import Base, State
@@ -11,12 +12,11 @@ if __name__ == "__main__":
                            format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
-
-session = Session(engine)
-if (State):
-    for state in session.query(State).order_by(State.id).all():
-        if (state.name.find('a') != -1) or (state.name.find('A') != -1):
-            print("{}: {}".format(state.id, state.name))
-else:
-    print()
-session.close()
+    session = Session(engine)
+    if (State):
+        for state in session.query(State).order_by(State.id).all():
+            if (state.name.find('a') != -1) or (state.name.find('A') != -1):
+                print("{}: {}".format(state.id, state.name))
+    else:
+        print()
+    session.close()

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Start link class to table in database
+lists all State objects
 """
 import sys
 from model_state import Base, State
