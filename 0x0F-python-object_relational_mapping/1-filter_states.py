@@ -13,7 +13,7 @@ if __name__ == '__main__':
                            passwd=arg[2], db=arg[3], charset="utf8")
     cur = conn.cursor()
     cur.execute("SELECT * FROM states \
-                WHERE SUBSTR(name, 1, 1) = 'N' ORDER BY id ASC")
+                WHERE name LIKE 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
