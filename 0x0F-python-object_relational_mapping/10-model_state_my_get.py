@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""
+prints the State object with the name passed as argument
 """
 import sys
 from model_state import Base, State
@@ -11,8 +12,7 @@ if __name__ == "__main__":
                            format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
-session = Session(engine)
-if (State):
+    session = Session(engine)
     dic = {}
     for state in session.query(State).order_by(State.id).all():
         dic[state.name] = state.id
@@ -21,6 +21,4 @@ if (State):
         print(dic[ar])
     else:
         print("Not found")
-else:
-    print()
-session.close()
+    session.close()
