@@ -3,8 +3,7 @@
 Class City
 """
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.schema import Column
-from sqlalchemy.types import Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
 
