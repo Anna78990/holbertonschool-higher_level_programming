@@ -7,6 +7,7 @@ from sqlalchemy.schema import Column
 from sqlalchemy.types import Integer, String
 from model_state import Base, State
 
+
 class City(Base):
     """
     class City, an inherit class of Base
