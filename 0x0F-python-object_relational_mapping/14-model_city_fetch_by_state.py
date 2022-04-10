@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+lists all of elements
 """
 import sys
 from model_state import Base, State
