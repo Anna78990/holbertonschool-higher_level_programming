@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
     for state in session.query(State).order_by(State.id).all():
-        if (state.name.find('a') != -1) or (state.name.find('A') != -1):
+        if (state.name.find('a') != -1) and (state.name.find('A') != -1):
             session.query(State).filter(State.id == state.id).delete()
     session.commit()
     session.close()
