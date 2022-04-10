@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""
+changes the name of a State object
 """
 import sys
 from model_state import Base, State
@@ -11,8 +12,8 @@ if __name__ == "__main__":
                            format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
-session = Session(engine)
-state_name = session.query(State).filter(State.id == 2).first()
-state_name.name = "New Mexico"
-session.commit()
-session.close()
+    session = Session(engine)
+    state_name = session.query(State).filter(State.id == 2).first()
+    state_name.name = "New Mexico"
+    session.commit()
+    session.close()

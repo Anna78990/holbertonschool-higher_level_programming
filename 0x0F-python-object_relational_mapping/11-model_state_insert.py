@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Start link class to table in database
+adds the State object “Louisiana” 
 """
 import sys
 from model_state import Base, State
