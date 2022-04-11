@@ -12,6 +12,6 @@ class City(Base):
     class City, an inherit class of Base
     """
     __tablename__ = "cities"
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128))
-    state_id = Column(Integer, ForeignKey('state.id'))
+    id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('state.id'), nullable=False)
