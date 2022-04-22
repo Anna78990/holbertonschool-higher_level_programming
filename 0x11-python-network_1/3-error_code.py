@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
+from urllib.request
+from urllib.error
 import sys
 
 if __name__ == "__main__":
-    req = Request(sys.argv[1])
+    req = urllib.Request(sys.argv[1])
+
     try:
-        response = urlopen(req)
-    except HTTPError as e:
-        print('Error code: ', e.code)
-    except URLError as e:
-        print('Error code: ', e.code)
-    else:
-        with urlopen(sys.argv[1]) as response:
+        with urllib.request.urlopen(req) as response:
             html = response.read()
             print(html.decode("utf8"))
+    except urllib.error.HTTPError as e:
+        print('Error code: ', e.code)
+    except urllib.error.URLError as e:
+        print('Error code: ', e.code)
