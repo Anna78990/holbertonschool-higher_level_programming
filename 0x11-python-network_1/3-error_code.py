@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """sends a request to the URL and displays the body of the response"""
-from urllib.request
-from urllib.error
+import urllib.request
+import urllib.error
 import sys
 
 if __name__ == "__main__":
