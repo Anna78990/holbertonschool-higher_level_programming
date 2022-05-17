@@ -7,15 +7,10 @@ axios.get(url)
     let ctr = 0;
     const dic = response.data.results;
     for (let i = 0; i < dic.length; i++) {
-      const dicI = dic[i];
-      for (const [key] of Object.entries(dicI)) {
-        if (key === 'characters') {
-          const charaL = dicI.characters;
-          for (let j = 0; j < charaL.length; j++) {
-            if (charaL[j] == 'https://swapi-api.hbtn.io/api/people/18/') {
-              ctr++;
-            }
-          }
+      const charaL = dic[i].characters;
+      for (let j = 0; j < charaL.length; j++) {
+        if (charaL[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
+          ctr++;
         }
       }
     }
