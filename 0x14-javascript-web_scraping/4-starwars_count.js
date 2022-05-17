@@ -11,8 +11,10 @@ axios.get(url)
       for (const [key] of Object.entries(dicI)) {
         if (key === 'characters') {
           const charaL = dicI.characters;
-          if (charaL.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-            ctr += 1;
+          for (let j = 0; j < charaL.length; j++) {
+            if (charaL[j] == 'https://swapi-api.hbtn.io/api/people/18/') {
+              ctr++;
+            }
           }
         }
       }
