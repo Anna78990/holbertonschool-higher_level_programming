@@ -1,7 +1,11 @@
 #!/usr/bin/node
-const https = require('https');
+const axios = require('axios').default;
 const path = process.argv[2];
 
-https.get(path, function (res) {
-  console.log('code:', res.statusCode); // <======= Here's the status code
-});
+axios.get(path)
+  .then(function (response) {
+    console.log('code:', response.status);
+  })
+  .catch(function (error) {
+    console.log('code:', error.response.status);
+  });
