@@ -9,7 +9,7 @@ axios.get(url)
     for (let i = 0; i < dic.length; i++) {
       const charaL = dic[i].characters;
       for (let j = 0; j < charaL.length; j++) {
-        if (charaL[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (charaL[j].includes('/18/') === true) {
           ctr++;
         }
       }
